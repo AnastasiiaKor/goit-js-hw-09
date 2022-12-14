@@ -52,11 +52,11 @@ function convertMs(ms) {
 function updateTimer() {
   const inputDate = new Date(refs.input.value);
   const dif = inputDate.getTime() - Date.now();
-  console.log('file: 02-timer.js:55 ~ updateTimer ~ dif ', dif);
   if (dif < 0) {
     clearInterval(timerId);
   } else {
-    drawTimer(({ days, hours, minutes, seconds } = convertMs(dif)));
+    const convertedMS = convertMs(dif);
+    drawTimer(({ days, hours, minutes, seconds } = convertedMS));
   }
 }
 
