@@ -56,11 +56,12 @@ function updateTimer() {
     clearInterval(timerId);
   } else {
     const convertedMS = convertMs(dif);
-    drawTimer(({ days, hours, minutes, seconds } = convertedMS));
+    drawTimer(convertedMS);
   }
 }
 
 function drawTimer(obj) {
+  const { days, hours, minutes, seconds } = obj;
   refs.timer.innerHTML = `<div class="field">
         <span class="value" data-days>${days}</span>
         <span class="label">Days</span>
