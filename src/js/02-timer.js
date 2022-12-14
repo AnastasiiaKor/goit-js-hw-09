@@ -8,7 +8,7 @@ const refs = {
   timer: document.querySelector('.timer'),
 };
 
-let timerId = 0;
+let timerId = null;
 const options = {
   enableTime: true,
   time_24hr: true,
